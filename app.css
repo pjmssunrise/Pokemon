@@ -1,16 +1,28 @@
+@font-face {
+    font-family: 'Love Honey';
+    src: url(fonts/Lasting\ Sketch.ttf) format('opentype');
+    /* Você pode adicionar outras variações da fonte aqui, como bold, italic, etc. */
+  }
+  
+
 body {
-    background-image: url(img/background/background.jpg);
+    background-image: url(img/background/0e66a6b7de72bdd1650b02d70f85ed85.jpg);
     background-repeat: no-repeat;
-    background-size: 1000px;
+    background-size: 3000px;
     background-attachment: fixed;
+    backdrop-filter: blur(10px);
+    font-family: 'Love Honey';
+    /* filter: blur(5px); */
     color: white;
 }
 
-
 /*Fazendo o elemento ser apresentado inline e centralizado o texto*/
 .pokemon {
-    background-color: white;
+    /* background-image: linear-gradient(rgb(34, 34, 39), black); */
+    background-color: rgb(29, 29, 32);
     margin: 10px;
+    /* margin-right: 400px;
+    margin-left: 400px; */
     padding: 10px;
     border-radius: 25px;
     width: 100px;
@@ -19,6 +31,9 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border: solid 40px;
+    border-image-source: url(img/44\ Sem\ Título_20230518122421.png);
+    border-image-slice: 400;
 }
 
 /*Fazendo o elemento ser apresentado em bloco*/
@@ -32,12 +47,18 @@ body {
     border-radius: 25px;
     display: grid;
     text-align: center;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     flex-direction: column;
     padding: 25px;
 }
 
 .numero {
-    color: black;
+    color: rgb(172, 121, 255);
     margin: 25px;
+}
+
+@media only screen and (min-width: 1400px) {
+    body {
+        background-size: 100%;
+    }
 }
