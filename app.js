@@ -17,10 +17,30 @@ while (i < 151) {
     const novaImg = document.createElement('img');
     novaImg.src = baseURL+(i+1)+".gif"; //Atribuindo o endereço e o nome do arquivo de imagem no atributo src do <img> criado.
 
+    //______________________
+    const informacao = document.createElement('div');
+    informacao.classList.add('informacao');
+
+    const botaoInfo = document.createElement('button');
+    botaoInfo.classList.add('botaoInfo');
+    botaoInfo.innerText = ("sobre")
+
+
+
+    // botaoInfo.addEventListener("click", function() {
+    //     window.location.src = "Pokemon/pokemon.html";
+    // });
+      
+    //______________________
+
+
     //Adicionando a imagem e o rótulo ao <div> criado
     pokemon.appendChild(novaImg);
     pokemon.appendChild(rotulo);
     document.getElementById('card').appendChild(pokemon)
+    pokemon.appendChild(informacao);
+    informacao.appendChild(botaoInfo);
+
 
     //Adicionando o <div> à página
     // document.body.appendChild(pokemon);

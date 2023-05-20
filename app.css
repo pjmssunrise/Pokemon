@@ -14,12 +14,50 @@ body {
     font-family: 'Love Honey';
     /* filter: blur(5px); */
     color: white;
+    margin: 0px;
+}
+
+.navbar {
+    /* position: absolute; */
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    width: 100px;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links ul li{
+    margin: 0 25px;
+}
+
+.navbar .nav-links ul li .active {
+    color: rgb(165, 95, 255);
+}
+
+.menu {
+    display: none;
+    width: 30px;
 }
 
 /*Fazendo o elemento ser apresentado inline e centralizado o texto*/
 .pokemon {
     /* background-image: linear-gradient(rgb(34, 34, 39), black); */
-    background-color: rgb(29, 29, 32);
+    background-color: rgba(29, 29, 32, 0.733);
     margin: 10px;
     /* margin-right: 400px;
     margin-left: 400px; */
@@ -36,6 +74,11 @@ body {
     border-image-slice: 400;
 }
 
+/* .pokemon:hover{
+    width: 150px;
+    height: 200px;
+} */
+
 /*Fazendo o elemento ser apresentado em bloco*/
 .pokemon img {
     width: 50px;
@@ -43,13 +86,16 @@ body {
 }
 
 #card {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.178), rgba(255, 255, 255, 0.747));
+    background-image: linear-gradient(rgba(255, 255, 255, 0.178), rgba(255, 255, 255, 0.233));
     border-radius: 25px;
     display: grid;
+    place-items: center;
     text-align: center;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     flex-direction: column;
     padding: 25px;
+    margin: 10px;
+    height: 500px;
 }
 
 .numero {
@@ -57,8 +103,34 @@ body {
     margin: 25px;
 }
 
+.botaoInfo {
+    background-color: rgb(174, 86, 255);
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 25px;
+    font-family: 'Love Honey';
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 16px;
+}
+
+.botaoInfo:hover {
+    background-color: rgb(153, 45, 255);
+    box-shadow: rgba(255, 255, 255, 0.671) 0px 0px 20px;
+}
+
 @media only screen and (min-width: 1400px) {
     body {
         background-size: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .menu {
+        display: block;
+    }
+    .nav-links {
+        display: none;
     }
 }
