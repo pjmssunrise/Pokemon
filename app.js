@@ -1,21 +1,31 @@
 const baseURL = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/';
+const novaURL = 'https://pokeapi.co/api/v2/pokemon/'
 
-let i =0;
+let i =1;
 while (i < 151) {
+
+    //Criando um elemento <span>
+    const rotulo = document.createElement('span');
+    // rotulo.innerText = (i+1); //Colocando o número do pokemon ao no texto do <span> criado.
+    rotulo.classList.add('numero')
+
+    fetch(novaURL+i)
+    .then(response => response.json())
+    .then(data=>{
+        rotulo.innerText = (data.name); //Colocando o número do pokemon ao no texto do <span> criado.
+    })
+
 
     //Criando um elemento <div>
     const pokemon = document.createElement('div');
     pokemon.classList.add('pokemon'); //Adicionando a class pokemon ao div. Ex.: <div class = 'pokemon'></div>
                                       //A classe pokemon está definida no arquivo app.css
 
-    //Criando um elemento <span>
-    const rotulo = document.createElement('span');
-    rotulo.innerText = (i+1); //Colocando o número do pokemon ao no texto do <span> criado.
-    rotulo.classList.add('numero')
+    pokemon.setAttribute('id',i)
 
     //Criando um elemento <img>
     const novaImg = document.createElement('img');
-    novaImg.src = baseURL+(i+1)+".gif"; //Atribuindo o endereço e o nome do arquivo de imagem no atributo src do <img> criado.
+    novaImg.src = baseURL+(i)+".gif"; //Atribuindo o endereço e o nome do arquivo de imagem no atributo src do <img> criado.
 
     //______________________
     const informacao = document.createElement('div');
@@ -23,7 +33,8 @@ while (i < 151) {
 
     const botaoInfo = document.createElement('button');
     botaoInfo.classList.add('botaoInfo');
-    botaoInfo.innerText = ("sobre")
+    botaoInfo.innerText = ("sobre");
+    botaoInfo.addEventListener('click','teste()')
 
 
 
@@ -48,3 +59,6 @@ while (i < 151) {
     i++;
 }
 
+function teste(){
+    console.log("Oi")
+}
