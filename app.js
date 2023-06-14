@@ -34,7 +34,7 @@ while (i < 151) {
     const botaoInfo = document.createElement('button');
     botaoInfo.classList.add('botaoInfo');
     botaoInfo.innerText = ("sobre");
-    botaoInfo.addEventListener('click','teste()')
+    // botaoInfo.addEventListener('click','teste()')
 
 
 
